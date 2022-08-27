@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Select the fonts you want to use
+          Make the way you want to read, yours
         </p>
         <a
           className="App-link"
@@ -18,9 +18,6 @@ function App() {
           Get Started
         </a>
       </header>
-      <body className="App-body">
-        Hi
-      </body>
     </div>
   );
 }
