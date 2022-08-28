@@ -2,6 +2,24 @@ import logo from './logo.png';
 import './App.css';
 
 function App() {
+  function test() {
+    /*eslint-disable no-undef*/
+
+    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+      const activeTabId = tabs[0].id
+      chrome.scripting.executeScript({
+        target: {tabId: activeTabId},
+        function: () => document.body.innerHTML = "CHANGETEXT",
+          });
+    })
+  }
+
+  return(
+      <div className="App">
+        <button onClick={test}>Click</button>
+      </div>
+  )
+
   return (
     <div className="App">
       <header className="App-header">
