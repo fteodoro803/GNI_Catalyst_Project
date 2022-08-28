@@ -1,0 +1,8 @@
+.Popup {
+    text-align: center;
+}
+
+.Popup-header {
+    background-color: azure;
+    min-height: 100vh;
+}
