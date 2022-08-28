@@ -6,12 +6,12 @@
     "48": "logo192.png",
    "128": "logo512.png"
   },
-  "permissions": ["storage", "activeTab"],
-  "manifest_version": 2,
+  "permissions": ["scripting"],
+  "manifest_version": 3,
   "version": "1.0.0",
-  "browser_action": {
-    "default_popup": "popup.html",
-    "*note": "maybe better to move popup to src folder",
+  "action": {
+    "default_popup": "index.html",
     "default_title": "gni popup"
-  }
+  },
+  "host_permissions": ["http://*/", "https://*/"]
 }
