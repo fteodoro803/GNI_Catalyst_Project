@@ -2,11 +2,15 @@ import logo from './logo.png';
 import './App.css';
 
 function App() {
-  function test() {
+  function fontScript() {
+    //console.log('test')
+    var e = document.getElementById("s")
+
     /*eslint-disable no-undef*/
 
     chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
       const activeTabId = tabs[0].id
+
       chrome.scripting.executeScript({
         target: {tabId: activeTabId},
         function: () => {
@@ -15,10 +19,10 @@ function App() {
           //alert(numTags.length);
           for(let i = 0;i < numTags.length; i++)
           {
-            //ShowResults(numTags[i].id);
             //document.setAttribute('font', '')
             numTags[i].style.fontFamily = "Arial";
           }
+          //document.body.innerHTML = test;
         },
       });
     })
@@ -30,29 +34,16 @@ function App() {
 
   return(
       <div className="App">
-
-        <button onClick={test}>Click</button>
+        <select id="fontValue">
+          <option value="Arial">Arial</option>
+          <option value="Comic-Sans">Comic Sans</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Calibri">Calibri</option>
+        </select>
+        <button onClick={fontScript}>Click</button>
       </div>
   )
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Make the way you want to read, yours
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Get Started
-        </a>
-      </header>
-    </div>
-  );
 }
 
 export default App;
