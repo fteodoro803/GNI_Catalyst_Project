@@ -9,13 +9,28 @@ function App() {
       const activeTabId = tabs[0].id
       chrome.scripting.executeScript({
         target: {tabId: activeTabId},
-        function: () => document.body.innerHTML = "CHANGETEXT",
-          });
+        function: () => {
+          //document.body.innerHTML = "CHANGETEXT"
+          let numTags = document.getElementsByTagName('p');
+          //alert(numTags.length);
+          for(let i = 0;i < numTags.length; i++)
+          {
+            //ShowResults(numTags[i].id);
+            //document.setAttribute('font', '')
+            numTags[i].style.fontFamily = "Arial";
+          }
+        },
+      });
     })
+
+    function ShowResults(value) {
+      alert(value);
+    }
   }
 
   return(
       <div className="App">
+
         <button onClick={test}>Click</button>
       </div>
   )
